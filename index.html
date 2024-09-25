@@ -13,59 +13,62 @@
     <header class="header">
         <p>My Info</p>
         <div class="head">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" id="about-link">About</a>
+            <a href="#skills" id="skills-link">Skills</a>
+            <a href="#projects" id="projects-link">Projects</a>
+            <a href="#contact" id="contact-link">Contact</a>
         </div>
     </header>
+
     <h2>About</h2>
     <section id="about">
         <div>
-            <!-- <img src="project image.jpeg" alt=""> -->
-            <p>I'm chennamdhavuni sushma recently completed my Graduation from MLRITM in the stream of Information
+            <img src="project image.jpeg" alt="">
+            <p>I'm Chennamdhavuni Sushma, recently completed my Graduation from MLRITM in the stream of Information
                 Technology and pursuing my post graduation degree in MSIT.</p>
         </div>
     </section>
+
     <h2>Skills</h2>
-    <section id="skills">
-        <div id="frontend">
+    <section id="skills" class="skills-section">
+        <div class="card">
+            <h1>Frontend</h1>
             <ul>
-                <h1>Frontend</h1>
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
             </ul>
         </div>
-        <div id="backend">
+        <div class="card">
+            <h1>Backend</h1>
             <ul>
-                <h1>Backend</h1>
                 <li>Java</li>
                 <li>Python</li>
             </ul>
         </div>
-        <div id="Database">
+        <div class="card">
+            <h1>Database</h1>
             <ul>
-                <h1>Database</h1>
                 <li>MySql</li>
             </ul>
         </div>
-
     </section>
+
     <h2>Projects</h2>
     <section id="projects">
         <h1>SECURITY BASED</h1>
-        <p>A new model for calculating maximum trust in osn</p>
+        <p>A new model for calculating maximum trust in OSN</p>
         <h1>NETWORKING BASED</h1>
-        <p> Resource allocation in network traffic using
-            distributed machine learning clusters</p>
+        <p>Resource allocation in network traffic using distributed machine learning clusters</p>
     </section>
+
     <h2>Contact</h2>
     <section id="contact">
         <input type="text" placeholder="Name"> <br><br>
-        <input type="Email" placeholder="Email"> <br><br>
+        <input type="email" placeholder="Email"> <br><br>
         <input type="submit" value="Send Message">
     </section>
+
     <footer>
         <div class="icons">
             <a href="https://www.linkedin.com/in/sushma-chennamadhavuni-7921bb255/">
@@ -79,6 +82,17 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        const links = document.querySelectorAll('.head a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function () {
+                links.forEach(item => item.classList.remove('active')); // Remove active class from all links
+                this.classList.add('active'); // Add active class to clicked link
+            });
+        });
+    </script>
 </body>
 
 </html>

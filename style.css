@@ -1,100 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-color: gainsboro;
     display: flex;
-    padding: 20px;
+    padding: 10px 20px;
     justify-content: space-between;
-    text-align: center;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    top: 0;
+    z-index: 1000;
 }
 
 header .head {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 header a {
     text-decoration: none;
-    align-content: center;
+    padding: 8px 12px;
+    white-space: nowrap;
+    transition: background-color 0.3s;
 }
 
 header a:hover {
-    background-color: lightpink;
-    padding: 5px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+header a.active {
+    background-color: lightskyblue;
+    /* Highlight color for active link */
     border-radius: 10px;
 }
 
 h2 {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    line-height: 5px;
+    line-height: 1.5;
+    margin-top: 70px;
+    /* Space for fixed header */
+}
+
+section {
+    background-color: rgb(122, 169, 199);
+    padding: 20px;
+    /* Reduced padding for sections */
+    margin: 10px 0;
+    /* Reduced margin to remove extra space between sections */
 }
 
 #about {
-    background-color: beige;
-    margin-top: 10px;
     display: flex;
-    padding: 10px;
-}
-
-#about>div {
-    display: flex;
+    align-items: center;
 }
 
 #about>div>p {
-    align-content: center;
     padding: 10px;
     font-family: cursive;
 }
 
-#skills {
+.skills-section {
     display: flex;
     justify-content: space-around;
-    background-color: beige;
-    margin-top: 10px;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    /* Adjust padding for better alignment */
 }
 
-#skills>div>ul {
-    padding: 20px;
-    width: 300px;
-    background-color: white;
+.card {
+    background-color: grey;
     border-radius: 10px;
-    font-family: cursive;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    margin: 10px;
+    /* Space between cards */
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 #projects {
     text-align: center;
-}
-
-#projects {
-    display: flex;
-    background-color: beige;
-    /* height: 300px; */
-    padding: 20px;
-    justify-content: space-around;
-}
-
-#projects>div {
-    border: 1px solid;
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.publish {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    padding: 20px 0;
+    /* Adjust padding for better alignment */
 }
 
 h3 {
-    text-align: center;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 #contact {
     text-align: center;
-    background-color: beige;
-    padding: 10px;
+    padding: 10px 0;
+    /* Adjust padding for better alignment */
 }
 
 input[type=submit] {
@@ -107,28 +116,18 @@ input[type=submit]:hover {
     background-color: blue;
 }
 
-input:active {
-    background-color: aqua;
-}
-
 #contact input {
     width: 50%;
-    padding: 15px 0px;
+    padding: 15px 0;
     text-align: center;
     border-radius: 10px;
     border: none;
-}
-
-textarea {
-    width: 40%;
-    padding: 70px;
 }
 
 footer {
     margin-top: 10px;
     padding: 10px;
     font-size: 20px;
-    gap: 20px;
     background-color: rgb(197, 183, 185);
 }
 
@@ -137,131 +136,59 @@ footer div {
     justify-content: space-around;
 }
 
-@media only screen and (max-width:320px) {
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 320px) {
     header {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 
-    header .head {
-        display: flex;
+    .skills-section {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 100%;
     }
 
-    #about div img {
-        width: 100px
-    }
-
-    #skills {
-        display: block;
-    }
-
-    #skills>div>ul {
-        width: 150px;
-    }
-
-    #projects {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    #projects>div>img {
-        width: 250px;
-        height: 100px;
-    }
-
-    textarea {
-        width: 20%;
-        padding: 30px;
+    .card {
+        width: 80%;
+        /* Wider cards on small screens */
+        margin-bottom: 20px;
+        /* Space between cards */
     }
 }
 
-@media only screen and (min-width:321px) and (max-width:700px) {
+@media only screen and (min-width: 321px) and (max-width: 700px) {
     header {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 
-    header .head {
-        display: flex;
+    .skills-section {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 100%;
     }
 
-    #about div img {
-        width: 150px
-    }
-
-    #skills {
-        display: block;
-    }
-
-    #skills>div>ul {
-        width: 250px;
-    }
-
-    #projects {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 10px;
-    }
-
-    #projects>div>img {
-        width: 305px;
-        height: 100px;
+    .card {
+        width: 60%;
+        /* Wider cards on small screens */
+        margin-bottom: 20px;
     }
 }
 
-@media only screen and (min-width:701px) and (max-width:1440px) {
-    header {
+@media only screen and (min-width: 701px) and (max-width: 1440px) {
+    .skills-section {
         display: flex;
+        flex-wrap: wrap;
     }
 
-    header .head {
-        display: flex;
-    }
-
-    #skills {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    #projects {
-        display: flex;
-    }
-
-    #projects>div>img {
-        width: 150px;
-        height: 100px;
+    .card {
+        width: 45%;
+        /* Adjust width for larger screens */
+        margin: 10px;
     }
 }
 
-@media only screen and (min-width:1441px) {
-    header {
-        display: flex;
-    }
-
-    header .head {
-        display: flex;
-    }
-
-    #skills {
-        display: flex;
-    }
-
-    #projects {
+@media only screen and (min-width: 1441px) {
+    .skills-section {
         display: flex;
     }
 }
