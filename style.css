@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: gainsboro;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    top: 0;
+    z-index: 1000;
+}
+
+header .head {
+    display: flex;
+    gap: 15px;
+}
+
+header a {
+    text-decoration: none;
+    padding: 8px 12px;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+
+header a:hover {
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+header a.active {
+    background-color: lightskyblue;
+    /* Highlight color for active link */
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1.5;
+    margin-top: 70px;
+    /* Space for fixed header */
+}
+
+section {
+    background-color: rgb(122, 169, 199);
+    padding: 20px;
+    /* Reduced padding for sections */
+    margin: 10px 0;
+    /* Reduced margin to remove extra space between sections */
+}
+
+#about {
+    display: flex;
+    align-items: center;
+}
+
+#about>div>p {
+    padding: 10px;
+    font-family: cursive;
+}
+
+.skills-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    /* Adjust padding for better alignment */
+}
+
+.card {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    margin: 10px;
+    /* Space between cards */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+#projects {
+    text-align: center;
+    padding: 20px 0;
+    /* Adjust padding for better alignment */
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#contact {
+    text-align: center;
+    padding: 10px 0;
+    /* Adjust padding for better alignment */
+}
+
+input[type=submit] {
+    background-color: green;
+    color: white;
+    font-weight: 900;
+}
+
+input[type=submit]:hover {
+    background-color: blue;
+}
+
+#contact input {
+    width: 50%;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+footer {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(197, 183, 185);
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 320px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        /* Wider cards on small screens */
+        margin-bottom: 20px;
+        /* Space between cards */
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 60%;
+        /* Wider cards on small screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1440px) {
+    .skills-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 45%;
+        /* Adjust width for larger screens */
+        margin: 10px;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .skills-section {
+        display: flex;
+    }
+}
