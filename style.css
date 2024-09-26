@@ -201,7 +201,8 @@ footer div {
 
 .project1 {
     background-color: #ae8ba1c9;
-    border: 1px solid black border-radius: 2cm;
+    border: 1px solid black;
+    border-radius: 2cm;
     padding: 20px;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
